@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DermaCare Pro - Marketing Software</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <h2>DermaCare Pro</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item active" data-page="dashboard">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </li>
+                <li class="nav-item" data-page="patients">
+                    <i class="fas fa-users"></i>
+                    <span>Patient Management</span>
+                </li>
+                <li class="nav-item" data-page="appointments">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Appointments</span>
+                </li>
+                <li class="nav-item" data-page="email-marketing">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email Marketing</span>
+                </li>
+                <li class="nav-item" data-page="treatments">
+                    <i class="fas fa-syringe"></i>
+                    <span>Treatments & Services</span>
+                </li>
+                <li class="nav-item" data-page="analytics">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Analytics</span>
+                </li>
+                <li class="nav-item" data-page="campaigns">
+                    <i class="fas fa-bullhorn"></i>
+                    <span>Marketing Campaigns</span>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <h1 id="page-title">Dashboard</h1>
+                </div>
+                <div class="header-right">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    <div class="user-profile">
+                        <img src="assets/avatar.png" alt="User" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%234A90E2%22/><text x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22white%22 font-size=%2240%22 font-family=%22Arial%22>Dr</text></svg>'">
+                        <span>Dr. Smith</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <!-- Dashboard Page -->
+                <div id="dashboard" class="page active">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: #4A90E2;">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Total Patients</h3>
+                                <p class="stat-number">1,247</p>
+                                <span class="stat-change positive">+12% this month</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: #50C878;">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Appointments Today</h3>
+                                <p class="stat-number">23</p>
+                                <span class="stat-change positive">+5 from yesterday</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: #F5A623;">
+                                <i class="fas fa-envelope-open"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Email Open Rate</h3>
+                                <p class="stat-number">68.5%</p>
+                                <span class="stat-change positive">+3.2% this week</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: #E94B3C;">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Monthly Revenue</h3>
+                                <p class="stat-number">$89,430</p>
+                                <span class="stat-change positive">+18% vs last month</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-grid">
+                        <div class="chart-card">
+                            <h3>Patient Acquisition Trend</h3>
+                            <canvas id="acquisitionChart"></canvas>
+                        </div>
+                        <div class="activity-card">
+                            <h3>Recent Activity</h3>
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <i class="fas fa-user-plus"></i>
+                                    <div>
+                                        <p>New patient registered: Sarah Johnson</p>
+                                        <small>2 hours ago</small>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <i class="fas fa-calendar"></i>
+                                    <div>
+                                        <p>Appointment scheduled: Michael Chen</p>
+                                        <small>4 hours ago</small>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <div>
+                                        <p>Email campaign sent: Acne Treatment Promo</p>
+                                        <small>1 day ago</small>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <i class="fas fa-star"></i>
+                                    <div>
+                                        <p>New review received: 5 stars</p>
+                                        <small>1 day ago</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Patient Management Page -->
+                <div id="patients" class="page">
+                    <div class="page-header">
+                        <button class="btn btn-primary" onclick="showAddPatientModal()">
+                            <i class="fas fa-plus"></i> Add New Patient
+                        </button>
+                        <div class="filters">
+                            <select id="patientFilter">
+                                <option value="all">All Patients</option>
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                                <option value="leads">Leads</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table" id="patientsTable">
+                            <thead>
+                                <tr>
+                                    <th>Patient ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Last Visit</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="patientsTableBody">
+                                <!-- Populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Appointments Page -->
+                <div id="appointments" class="page">
+                    <div class="page-header">
+                        <button class="btn btn-primary" onclick="showAddAppointmentModal()">
+                            <i class="fas fa-plus"></i> Schedule Appointment
+                        </button>
+                        <div class="view-toggle">
+                            <button class="btn btn-outline active" onclick="switchCalendarView('day')">Day</button>
+                            <button class="btn btn-outline" onclick="switchCalendarView('week')">Week</button>
+                            <button class="btn btn-outline" onclick="switchCalendarView('month')">Month</button>
+                        </div>
+                    </div>
+                    <div id="appointmentCalendar" class="calendar-container">
+                        <!-- Calendar will be rendered here -->
+                    </div>
+                    <div class="appointments-list">
+                        <h3>Upcoming Appointments</h3>
+                        <div id="appointmentsList">
+                            <!-- Populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email Marketing Page -->
+                <div id="email-marketing" class="page">
+                    <div class="page-header">
+                        <button class="btn btn-primary" onclick="showCreateCampaignModal()">
+                            <i class="fas fa-plus"></i> Create Campaign
+                        </button>
+                    </div>
+                    <div class="email-stats">
+                        <div class="email-stat">
+                            <h4>Total Sent</h4>
+                            <p>15,432</p>
+                        </div>
+                        <div class="email-stat">
+                            <h4>Delivered</h4>
+                            <p>14,987 (97.1%)</p>
+                        </div>
+                        <div class="email-stat">
+                            <h4>Opened</h4>
+                            <p>10,276 (68.5%)</p>
+                        </div>
+                        <div class="email-stat">
+                            <h4>Clicked</h4>
+                            <p>3,891 (37.9%)</p>
+                        </div>
+                    </div>
+                    <div class="campaigns-grid" id="campaignsGrid">
+                        <!-- Email campaigns will be populated here -->
+                    </div>
+                </div>
+
+                <!-- Treatments Page -->
+                <div id="treatments" class="page">
+                    <div class="page-header">
+                        <button class="btn btn-primary" onclick="showAddTreatmentModal()">
+                            <i class="fas fa-plus"></i> Add Treatment
+                        </button>
+                    </div>
+                    <div class="treatments-grid" id="treatmentsGrid">
+                        <!-- Treatments will be populated here -->
+                    </div>
+                </div>
+
+                <!-- Analytics Page -->
+                <div id="analytics" class="page">
+                    <div class="analytics-grid">
+                        <div class="chart-card">
+                            <h3>Revenue Trends</h3>
+                            <canvas id="revenueChart"></canvas>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Treatment Distribution</h3>
+                            <canvas id="treatmentChart"></canvas>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Patient Demographics</h3>
+                            <canvas id="demographicsChart"></canvas>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Marketing ROI</h3>
+                            <canvas id="roiChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Marketing Campaigns Page -->
+                <div id="campaigns" class="page">
+                    <div class="page-header">
+                        <button class="btn btn-primary" onclick="showCreateMarketingCampaignModal()">
+                            <i class="fas fa-plus"></i> New Campaign
+                        </button>
+                    </div>
+                    <div class="campaigns-container">
+                        <div class="campaign-templates">
+                            <h3>Campaign Templates</h3>
+                            <div class="template-grid">
+                                <div class="template-card">
+                                    <i class="fas fa-sun"></i>
+                                    <h4>Summer Skin Care</h4>
+                                    <p>Promote sun protection and hydration treatments</p>
+                                    <button class="btn btn-outline">Use Template</button>
+                                </div>
+                                <div class="template-card">
+                                    <i class="fas fa-birthday-cake"></i>
+                                    <h4>Birthday Special</h4>
+                                    <p>Send personalized birthday offers</p>
+                                    <button class="btn btn-outline">Use Template</button>
+                                </div>
+                                <div class="template-card">
+                                    <i class="fas fa-sparkles"></i>
+                                    <h4>Anti-Aging Promo</h4>
+                                    <p>Highlight botox and filler treatments</p>
+                                    <button class="btn btn-outline">Use Template</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="active-campaigns">
+                            <h3>Active Campaigns</h3>
+                            <div id="activeCampaignsList">
+                                <!-- Active campaigns populated here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <div id="modalContainer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/patients.js"></script>
+    <script src="js/appointments.js"></script>
+    <script src="js/email-marketing.js"></script>
+    <script src="js/treatments.js"></script>
+    <script src="js/analytics.js"></script>
+    <script src="js/campaigns.js"></script>
+</body>
+</html>
